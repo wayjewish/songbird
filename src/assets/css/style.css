@@ -305,6 +305,13 @@ h1, h2, p {
 }
 
 @media (max-width: 575px) {
+  .header-top {
+    justify-content: center;
+  }
+  .logo {
+    text-align: center;
+  }
+
   .pagination {
     flex-direction: column;
     align-items: center;
