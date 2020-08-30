@@ -67,33 +67,35 @@ class App extends React.Component {
   }
 
   handleClickNext() {
-    let levelNext = this.state.level + 1;
+    if (this.state.levelCompleted) {
+      let levelNext = this.state.level + 1;
 
-    if (levelNext < this.state.levels) {
-      this.setState((state) => {
-        state.menu[state.level].isActive = false;
-        state.menu[levelNext].isActive = true;
-        let correctGames = data[levelNext][getRandomInRange(0, data[levelNext].length - 1)];
-        console.log(correctGames.name);
+      if (levelNext < this.state.levels) {
+        this.setState((state) => {
+          state.menu[state.level].isActive = false;
+          state.menu[levelNext].isActive = true;
+          let correctGames = data[levelNext][getRandomInRange(0, data[levelNext].length - 1)];
+          console.log(correctGames.name);
 
-        return {
-          menu: menu,
-          scoreLevel: 5,
-          level: state.level + 1,
-          levelCompleted: false,
-          arrGames: JSON.parse(JSON.stringify(data[levelNext])),
-          correctGames: correctGames,
-          guessGames: null,
-        };
-      });
-    }
-    
-    if (levelNext >= this.state.levels) {
-      this.setState((state) => {
-        return {
-          endGame: true,
-        };
-      });
+          return {
+            menu: menu,
+            scoreLevel: 5,
+            level: state.level + 1,
+            levelCompleted: false,
+            arrGames: JSON.parse(JSON.stringify(data[levelNext])),
+            correctGames: correctGames,
+            guessGames: null,
+          };
+        });
+      }
+      
+      if (levelNext >= this.state.levels) {
+        this.setState((state) => {
+          return {
+            endGame: true,
+          };
+        });
+      }
     }
   }
 
