@@ -4,8 +4,8 @@ function Header(props) {
   return (
     <div className="header">
       <div className="header-top row">
-        <div className="logo col-xs-6">Music games</div>
-        <div className="score-wrap col-xs-6">Баллы: {props.score}</div>
+        <div className="logo col-sm-6">Music games</div>
+        <div className="score-wrap col-sm-6">Баллы: {props.score}</div>
       </div>
       <div className="header-bot">
         <List list={props.list} />

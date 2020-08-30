@@ -305,7 +305,8 @@ h1, h2, p {
 }
 
 @media (max-width: 575px) {
-  .header-top {
+  .header-top,
+  .score-wrap {
     justify-content: center;
   }
   .logo {
